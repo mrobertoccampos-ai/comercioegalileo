@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Westie Tech Hoodies - Tienda Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+      background: white;
+      margin: 15px auto;
+      width: 90%;
+      max-width: 1100px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .producto {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .producto img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .producto h3 {
+      margin: 10px 0;
+    }
+    .producto button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: #111;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .producto button:hover {
+      background: #444;
+    }
+    #carrito {
+      margin-top: 20px;
+    }
+    #lista-carrito {
+      list-style: none;
+      padding: 0;
+    }
+    #lista-carrito li {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+    }
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Westie Tech Hoodies</h1>
+    <p>Moda urbana con un estilo tecnológico</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#carrito">Carrito</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#empresa">Sobre la empresa</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#faq">Preguntas Frecuentes</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenido</h2>
+    <p>En <b>Westie Tech Hoodies</b> encontrarás sudaderas únicas con diseños futuristas y tecnológicos. ¡Explora nuestro catálogo!</p>
+  </section>
+
+  <section id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="nsx0h6YC.jpg" alt="Hoodie Tech Black">
+        <h3>Hoodie Tech Black</h3>
+        <p>Diseño oscuro con detalles tecnológicos futuristas.</p>
+        <p><b>Q450</b></p>
+        <button onclick="agregarAlCarrito('Hoodie Tech Black', 450)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="WnJyzKnz.jpg" alt="Hoodie Tech White">
+        <h3>Hoodie Tech White</h3>
+        <p>Estilo minimalista en blanco con patrones geométricos.</p>
+        <p><b>Q450</b></p>
+        <button onclick="agregarAlCarrito('Hoodie Tech White', 450)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="shajjre4.jpg" alt="Hoodie Cyber Red">
+        <h3>Hoodie Cyber Red</h3>
+        <p>Sudadera con acentos rojos y diseño digital.</p>
+        <p><b>Q475</b></p>
+        <button onclick="agregarAlCarrito('Hoodie Cyber Red', 475)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="TxHMzNb1.jpg" alt="Hoodie Matrix Green">
+        <h3>Hoodie Matrix Green</h3>
+        <p>Estilo inspirado en el código digital verde.</p>
+        <p><b>Q475</b></p>
+        <button onclick="agregarAlCarrito('Hoodie Matrix Green', 475)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="MQKEJhb_.jpg" alt="Hoodie Space White">
+        <h3>Hoodie Space White</h3>
+        <p>Diseño inspirado en el espacio con patrones futuristas.</p>
+        <p><b>Q480</b></p>
+        <button onclick="agregarAlCarrito('Hoodie Space White', 480)">Agregar al Carrito</button>
+      </div>
+      <div class="producto">
+        <img src="ZBHowKhP.jpg" alt="Hoodie Dark Neon">
+        <h3>Hoodie Dark Neon</h3>
+        <p>Sudadera oscura con detalles neón brillantes.</p>
+        <p><b>Q480</b></p>
+        <button onclick="agregarAlCarrito('Hoodie Dark Neon', 480)">Agregar al Carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p><b>Total: Q<span id="total">0</span></b></p>
+  </section>
+
+  <section id="noticias">
+    <h2>Noticias</h2>
+    <article>
+      <h3>Lanzamiento de la nueva colección</h3>
+      <p>Estamos emocionados de presentar nuestra primera colección de hoodies con estilo tecnológico.</p>
+    </article>
+    <article>
+      <h3>Visita nuestro Blog</h3>
+      <p>Lee más novedades, historias y tendencias en nuestro blog oficial:</p>
+      <p><a href="https://mastertest0708.wixsite.com/tech-westie-hoodie" target="_blank">👉 Blog Westie Tech Hoodies</a></p>
+    </article>
+  </section>
+
+  <section id="empresa">
+    <h2>Sobre Westie Tech Hoodies</h2>
+    <p>Somos una marca innovadora de moda urbana que fusiona diseño, tecnología y estilo. Nuestro objetivo es ofrecer prendas únicas que expresen creatividad y modernidad.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p><b>Teléfono:</b> +502 1234 5678</p>
+    <p><b>Email:</b> contacto@westietech.com</p>
+    <p><b>Ubicación:</b> Ciudad de Guatemala</p>
+  </section>
+
+  <section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <p><b>¿Hacen envíos internacionales?</b><br>Sí, realizamos envíos a diferentes países. Contáctanos para más información.</p>
+    <p><b>¿Los hoodies son unisex?</b><br>Sí, todos nuestros diseños son unisex.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Westie Tech Hoodies - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarAlCarrito(producto, precio) {
+      carrito.push({producto, precio});
+      total += precio;
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById("lista-carrito");
+      lista.innerHTML = "";
+      carrito.forEach((item, index) => {
+        let li = document.createElement("li");
+        li.textContent = item.producto + " - Q" + item.precio;
+        
+        let btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "X";
+        btnEliminar.style.marginLeft = "10px";
+        btnEliminar.onclick = () => eliminarDelCarrito(index);
+
+        li.appendChild(btnEliminar);
+        lista.appendChild(li);
+      });
+      document.getElementById("total").textContent = total;
+    }
+
+    function eliminarDelCarrito(index) {
+      total -= carrito[index].precio;
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+  </script>
+
+</body>
+</html>
